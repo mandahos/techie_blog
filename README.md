@@ -11,7 +11,8 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 *
 
 ## Website
-Put link here
+https://mandahos.github.io/techie_blog/
+
 
 # Contribution
 Made with ✨ by Amanda
