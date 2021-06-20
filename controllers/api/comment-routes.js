@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { Comment, Post, User } = require('../../models');
-const sequlize = require('../../config/connection.js');
 
 router.get('/', (req, res) => {
     Comment.findAll()
