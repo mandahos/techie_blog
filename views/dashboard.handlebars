@@ -1,0 +1,38 @@
+<section class="dashboard">
+    <section>
+        <h1>Add a New Post</h1>
+
+        <form class="post-new">
+            <div>
+                <label for="post-title">Title</label>
+                <input name="post-title" id="post-title" type="text" />
+            </div>
+            <div>
+                <label for="post-text">Text</label>
+                <input id="post-text" name="post-text">
+            </div>
+            <button type="submit" class="btn">Add!</button>
+        </form>
+    </section>
+
+    {{#if posts.length}}
+    <section>
+        <h2>Your posts</h2>
+        {{#each posts as |post|}}
+        <article class="post">
+            <div class="title">
+                <h4>{{title}}</h4>
+                <span>{{text}}</span>
+            </div>
+            <div class="info">
+                <span>{{format_date created_at}}</span>
+                <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+                <a href="/dashboard/edit/{{post.id}}">Edit post</a>
+            </div>
+        </article>
+        {{/each}}
+    </section>
+    {{/if}}
+</section>
+
+<script src="/javascript/post-new.js"></script>
