@@ -6,7 +6,8 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const hbs = exphbs.create({});
+const helpers = require('./utils/helpers.js')
+const hbs = exphbs.create({ helpers });
 
 const sess = {
     secret: 'dont share',

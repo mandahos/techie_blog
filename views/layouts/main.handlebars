@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Techie News</title>
-        <link rel="stylesheet" href="/public/css/style.css">
-    </head>
-    
-    <body>
-        {{{ body }}}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Tech News</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <h2>
+            <a href="/">Techie Blog</a>
+        </h2>
+        <nav>
+            {{#if loggedIn}}
+            <a href="/dashboard">Add A Post</a>
+            <button id="logout">Log Out</button>
+            {{else}}
+            <a href="/login">Log In</a>
+            {{/if}}
+        </nav>
+    </header>
+    {{{ body }}}
+    <footer>
+        ©️ Techie Blog
+    </footer>
+</body>
+<script src="/javascript/logout.js"></script>
+
 </html>
