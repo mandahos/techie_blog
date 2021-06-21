@@ -7,13 +7,12 @@ router.get('/dashboard', withAuth, (req, res) => {
     Post.findAll({
       where: { user_id: req.session.user_id },
       attributes: [
-        'id', 'title', 'text', 'created_at'
-      ],
+        'id', 'title', 'post_text', 'created_at'],
       order: [['created_at', 'DESC']],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id'],
+          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
           include: {
             model: User,
             attributes: ['username']
