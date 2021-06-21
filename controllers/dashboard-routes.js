@@ -1,5 +1,9 @@
+const router = require('express').Router();
+const { Post, User, Comment } = require('../models');
+const withAuth = require('../utils/auth');
+
 //dashboard
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', withAuth, (req, res) => {
     Post.findAll({
       where: { user_id: req.session.user_id },
       attributes: [
